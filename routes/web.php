@@ -23,8 +23,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // redirect to admin page
 Route::middleware( ['auth', 'isAdmin'])->group(function (){
-    Route::get('/admin', function () {
-        return " this is admin";
+    Route::get('/dashboard', function () {
+        return view('admin.index');
     });
 });
 
