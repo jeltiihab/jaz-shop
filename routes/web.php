@@ -21,10 +21,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
 // redirect to admin page
-Route::middleware( ['auth', 'isAdmin'])->group(function (){
-    Route::get('/dashboard', function () {
-        return view('admin.index');
-    });
+Route::middleware( ['auth', 'isAdmin'])->group(function (){  // see http/kernel.php
+    Route::get('/dashboard', 'Admin\FrontendController@index');
+
+    Route::get('categories', 'Admin\CategoryController@index');
+    Route::get('add-category', 'Admin\CategoryController@add');
+    Route::post('insert-category', 'Admin\CategoryController@insert');
 });
 
