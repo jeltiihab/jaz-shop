@@ -29,9 +29,8 @@
                           <td>{{ $item->description }}</td>
 
                           <td>
-                              <button class="btn btn-primary">Editer</button>
+                              <a class="btn btn-primary" href="{{ url('edit-prod/'.$item->id)}}"> Editer </a>
                               <button class="btn btn-danger">Supprimer</button>
-                              <button class="btn btn btn-warning">Modifier</button>
                           </td>
                       </tr>
               </tbody>
