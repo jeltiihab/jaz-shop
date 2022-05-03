@@ -90,4 +90,21 @@ class CategoryController extends Controller
 
         return redirect('categories')->with('status', 'La Catégorie à été modifié avec succès');
     }
+
+
+    //delete category
+
+    public function delete($id){
+        $category = Category::find($id);
+        if($category->image){
+            $path = 'asserts/uploads/category'.$category->image;
+            if(File::exists($path)){
+                File::delete($path);
+            }
+
+        }
+
+        $category->delete();
+        return redirect('categories')->with('status', 'La Catégorie à été supprimé avec succès');
+    }
 }
