@@ -2,7 +2,7 @@
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
 
-  
+
   <div class="app-brand demo ">
     <a href="index.html" class="app-brand-link">
       <span class="app-brand-logo demo">
@@ -44,33 +44,33 @@
       <span class="app-brand-text demo menu-text fw-bolder ms-2">JAZShop</span>
     </a>
 
-    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+    <a href="javascript:void(0)" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
       <i class="bx bx-chevron-left bx-sm align-middle"></i>
     </a>
   </div>
 
   <div class="menu-inner-shadow"></div>
 
-  
 
-  <ul class="menu-inner">
+
+  <ul class="nav">
 
     <!-- Dashboard -->
-    <li class="menu-item active">
+      <li class="menu-item {{ Request::is('dashboard') ? 'active' : ''}}">
       <a href="#" class="nav-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
         <div data-i18n="Analytics">tableau de bord</div>
       </a>
     </li>
 
-     <li class="menu-item">
+     <li class="menu-item {{ Request::is('categories') ? 'active' : ''}}">
       <a href="{{ url('categories' )}}" class="nav-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
         <div data-i18n="Analytics">Categories</div>
       </a>
     </li>
 
-    <li class="menu-item">
+      <li class="menu-item {{ Request::is('add-categories') ? 'active' : ''}}">
       <a href="{{ url('/add-category' )}}" class="nav-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
         <div data-i18n="Analytics">Ajout Catégorie</div>
@@ -117,7 +117,7 @@
       <span class="menu-header-text">Pages</span>
     </li>
    -->
-  
+
   </ul>
 
 </aside>
