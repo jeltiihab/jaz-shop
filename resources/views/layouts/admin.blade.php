@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
     <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
-    
-    
+
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="" />
 
@@ -31,14 +31,14 @@
 
     <link rel="stylesheet" href="{{ asset('admin/css/apex-charts.css') }}" />
 
-  
+
   </head>
 
   <body>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container" >
-        
+
       <!-- Menu -->
            @include("admin/inc/asidebar")
         <!-- / Menu -->
@@ -48,8 +48,8 @@
           <!-- Navbar -->
              @include("admin/inc/adminnav")
           <!-- / Navbar -->
-         
-        
+
+
           <!-- Content wrapper -->
           <div class="content-wrapper">
             <!-- Content -->
@@ -83,7 +83,15 @@
     <script src="{{ asset( 'admin/js/perfect-scrollbar.js') }}" defer></script>
 
     <script src="{{ asset( 'admin/js/menu.js') }}" defer></script>
-    
+
+    <!-- Sweet Alert JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @if(session('status'))
+        <script>
+            swal(" {{ session('status') }}")
+        </script>
+
+    @endif
 
     <!-- Main JS -->
      <!-- <script src="{{ asset( 'admin/js/main.js') }}" defer></script>  -->

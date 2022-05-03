@@ -50,7 +50,7 @@ class CategoryController extends Controller
         $category->save();
 
 // after redirect to the table list another dashboard
-        return redirect('/dashboard')->with('status', 'La Catégorie à été ajouté avec succès');
+        return redirect('categories')->with('status', 'La Catégorie à été ajouté avec succès');
     }
 
 
