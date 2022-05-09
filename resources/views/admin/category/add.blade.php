@@ -17,26 +17,13 @@
                   </div>
 
                   <div class="col-md-6">
-                      <label for="">slug</label>
+                      <label for="">Liens</label>
                       <input type="text" class="form-control" name="slug">
                   </div>
 
-                  <div class="col-md-6">
-                      <label for="">description</label>
+                  <div class="col-md-12 mb-3">
+                      <label for="">Description</label>
                       <input type="text" class="form-control" row="3" name="description">
-                  </div>
-
-                  <div class="col-md-6">
-                      <label for="">Status</label>
-                      <input type="checkbox" name="status">
-                        <label for="">Polularité</label>
-                      <input type="checkbox" name="popular">
-                  </div>
-
-    
-                  <div class="col-md-6">
-                    <label for="formFile" class="form-label">Image</label>
-                    <input class="form-control" type="file" id="image"  name="image">
                   </div>
 
                   <div class="col-md-6">
@@ -52,6 +39,18 @@
                   <div class="col-md-6">
                       <label for="">meta keywords</label>
                       <input type="text" class="form-control" name="meta_keywords">
+                  </div>
+                  
+                  <div class="col-md-6 pt-4">
+                      <label for="status">Status</label>
+                      <input type="checkbox" name="status">
+                        <label for="popular">Polularité</label>
+                      <input type="checkbox" name="popular">
+                  </div>
+ 
+                  <div class="col-md-12 mb-3">
+                    <label for="formFile" class="form-label">Image</label>
+                    <input class="form-control" type="file" id="image"  name="image">
                   </div>
 
                   <div class="col-md-6">
