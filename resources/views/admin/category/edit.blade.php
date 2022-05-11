@@ -30,7 +30,7 @@
 
                     <div class="col-md-6">
                         <label for="">Title</label>
-                        <input type="text" class="form-control" name="meta_title"  value="{{ $category->mate_title }}">
+                        <input type="text" class="form-control" name="meta_title"  value="{{ $category->meta_title }}">
                     </div>
                     <div class="col-md-6 pt-4">
                         <label for="">Status</label>
@@ -40,12 +40,12 @@
                     </div>
                     <div class="col-md-6">
                         <label for="">Meta descrip</label>
-                        <textarea type="text" class="form-control"  row="3" name="meta_descrip"  value="{{ $category->meta_descrip }}"></textarea>
+                        <input type="text" class="form-control"  row="3" name="meta_descrip"  value="{{ $category->meta_descrip }}">
                     </div>
 
                     <div class="col-md-6">
                         <label for="">meta keywords</label>
-                        <textarea type="text" class="form-control" row="3" name="meta_keywords"  value="{{ $category->meta_keywords }}" ></textarea>
+                        <input type="text" class="form-control" row="3" name="meta_keywords"  value="{{ $category->meta_keywords }}" >
                     </div>
                    
                      @if($category->image)

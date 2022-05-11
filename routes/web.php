@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\ProductController;
 
 
@@ -14,10 +14,11 @@ use App\Http\Controllers\Admin\ProductController;
 
 Auth::routes();
 
-Route::get('/', 'Frontend\FrontendController@index');
+Route::get('/', [FrontendController::class, 'index']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('category', [FrontendController::class, 'category']);
+Route::get('view-category/{slug}', [FrontendController::class, 'viewcategory']);
+Route::get('category/{cate_slug}/{prod_slug}', [FrontendController::class, 'productview']);
 
 
 // redirect to admin page

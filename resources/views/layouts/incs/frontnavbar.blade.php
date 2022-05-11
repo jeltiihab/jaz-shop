@@ -7,16 +7,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home</a>
+          <a class="nav-link" aria-current="page" href="{{'/'}}">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="{{url('category')}}">Catégories</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link "href="{{url('login')}}">Se connecter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <a class="nav-link "href="{{url('register')}}">S'inscrire</a>
         </li>
       </ul>
     </div>
