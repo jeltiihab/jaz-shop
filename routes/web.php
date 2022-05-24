@@ -21,8 +21,11 @@ Route::get('category', [FrontendController::class, 'category']);
 Route::get('view-category/{slug}', [FrontendController::class, 'viewcategory']);
 Route::get('category/{cate_slug}/{prod_slug}', [FrontendController::class, 'productview']);
 
+Route::post('add-to-cart', [CartController::class, 'addProduct']);
+Route::post('delete-cart-item', [CartController::class, 'deleteProduct']);
+
 Route::middleware(['auth'])->group(function () {
-    Route::post('add-to-cart', [CartController::class, 'addProduct']);
+    Route::get('cart', [CartController::class, 'viewcart']);
 });
 
 // redirect to admin page
