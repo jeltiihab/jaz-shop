@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\CartController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
@@ -20,6 +21,9 @@ Route::get('category', [FrontendController::class, 'category']);
 Route::get('view-category/{slug}', [FrontendController::class, 'viewcategory']);
 Route::get('category/{cate_slug}/{prod_slug}', [FrontendController::class, 'productview']);
 
+Route::middleware(['auth'])->group(function () {
+    Route::post('add-to-cart', [CartController::class, 'addProduct']);
+});
 
 // redirect to admin page
 Route::middleware(['auth', 'isAdmin'])->group(function () {  // see http/kernel.php
