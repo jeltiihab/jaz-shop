@@ -53,11 +53,16 @@
                                     <button class="input-group-text increment-btn">+</button>
                                 </div>
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-9">
                                 <br/>
-                                <button type="button" class="btn btn-primary me-3 addToCartBtn float-start">Ajouter au
-                                    panier <i
-                                        class="fa fa-shopping-cart"></i></button>
+                                @if ($product->qty>0)
+                                    <label class="badge bg-success">Disponible</label>
+                                    <button type="button" class="btn btn-primary me-3 addToCartBtn float-start">Ajouter au
+                                        panier <i
+                                            class="fa fa-shopping-cart"></i></button>
+                                @else
+                                    <label class="badge bg-danger">Rupture</label>
+                                @endif
                                 <button type="button" class="btn btn-success me-3 float-start">Ajouter aux favoris <i
                                         class="fa fa-heart"></i></button>
                             </div>
