@@ -29,6 +29,7 @@ Route::post('update-cart', [CartController::class, 'updateCart']);
 Route::middleware(['auth'])->group(function () {
     Route::get('cart', [CartController::class, 'viewcart']);
     Route::get('checkout', [CheckoutController::class, 'index']);
+    Route::post('place-order', [CheckoutController::class, 'Placeorder']);
 });
 
 // redirect to admin page
