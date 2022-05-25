@@ -23,6 +23,7 @@ Route::get('category/{cate_slug}/{prod_slug}', [FrontendController::class, 'prod
 
 Route::post('add-to-cart', [CartController::class, 'addProduct']);
 Route::post('delete-cart-item', [CartController::class, 'deleteProduct']);
+Route::post('update-cart', [CartController::class, 'updateCart']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('cart', [CartController::class, 'viewcart']);
