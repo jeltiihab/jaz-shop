@@ -43,15 +43,23 @@ class CheckoutController extends Controller
         $order->state = $request->input('state');
         $order->country = $request->input('country');
         $order->postalcode = $request->input('postalcode');
+
+        //Calculate the total price
+        $total = 0;
+        $cartitems_total = Cart::where('user_id', Auth::id())->get();
+        foreach ($cartitems_total as $prod)
+        {
+            $total += $prod->products->selling_price;
+        }
+        $order->total_price = $total;
+
         $order->tracking_no = 'jaz-shop'.rand(1111, 9999);
         $order->save();
-
-        $order->id;
 
         $cartitems = Cart::where('user_id', Auth::id())->get();
         foreach ($cartitems as $item)
         {
-            OrderItem::created([
+            OrderItem::create([
                 'order_id' => $order->id,
                 'prod_id' => $item->prod_id,
                 'qty' => $item->prod_qty,

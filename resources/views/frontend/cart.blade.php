@@ -19,6 +19,7 @@
     </div>
     <div class="container my-5">
         <div class="card shadow product_data">
+            @if($cartitems->count() > 0)
             <div class="card-body">
                 @php $total = 0 @endphp
                 @foreach($cartitems as $item)
@@ -61,6 +62,14 @@
                 </h6>
                 <a href="{{url('checkout')}}" class="btn btn-outline-success float-end">Proceed to checkout</a>
             </div>
+            @else
+                <div class="card-body text-center">
+                    <h2>
+                        Your <i class="fa fa-shopping-cart"></i> Cart is empty
+                    </h2>
+                    <a href="{{url('category')}}" class="btn btn-outline-primary float-end">Continue shopping</a>
+                </div>
+                @endif
         </div>
 
     </div>

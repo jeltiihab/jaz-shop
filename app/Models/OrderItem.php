@@ -4,27 +4,25 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class OrderItem extends Model
 {
     use HasFactory;
 
     protected $table = 'order_items';
-    protected $fillabe = [
-        'user_id',
-
-        'fname',
-        'lname',
-        'email',
-        'phone',
-        'address1',
-        'address2',
-        'city',
-        'state',
-        'country',
-        'postalcode',
-        'status',
-        'message',
-        'tracking_no'
+    protected $fillable = [
+        'order_id',
+        'prod_id',
+        'price',
+        'qty',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function products(): BelongsTo
+    {
+        return $this->belongsTo(Product::class, 'prod_id', 'id');
+    }
 }

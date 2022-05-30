@@ -62,26 +62,32 @@
                 <div class="col-md-5">
                     <div class="card">
                         <div class="card-body">
-                            <h6>Other Details</h6>
-                            <hr>
-                            <table class="table table-striped table-bordered">
-                                <thead>
-                                <tr>Nom</tr>
-                                <tr>Quantité</tr>
-                                <tr>Prix</tr>
-                                </thead>
-                                <tbody>
-                                @foreach ($cartitems as $item)
-                                    <tr>
-                                        <td>{{ $item->products->name }}</td>
-                                        <td>{{ $item->prod_qty }}</td>
-                                        <td>{{ $item->products->selling_price }}</td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                            <hr>
-                            <button type="submit" class="btn btn-primary w-100">Place order</button>
+                            @if($cartitems->count() > 0)
+                                <h6>Other Details</h6>
+                                <hr>
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                    <tr>Nom</tr>
+                                    <tr>Quantité</tr>
+                                    <tr>Prix</tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach ($cartitems as $item)
+                                        <tr>
+                                            <td>{{ $item->products->name }}</td>
+                                            <td>{{ $item->prod_qty }}</td>
+                                            <td>{{ $item->products->selling_price }}</td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                                <hr>
+                                <button type="submit" class="btn btn-primary w-100">Place order</button>
+                            @else
+                                <h6>Other Details</h6>
+                                <hr>
+                                <h3 class="text-center">No products in your cart</h3>
+                            @endif
                         </div>
                     </div>
                 </div>
