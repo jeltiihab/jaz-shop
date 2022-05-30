@@ -100,6 +100,19 @@
         <div data-i18n="Analytics">Ajouter Produits</div>
       </a>
     </li>
+
+      <li class="menu-item {{ Request::is('orders') ? 'active' : ''}}">
+          <a href="{{ url('orders')}}" class="nav-link">
+              <i class="menu-icon tf-icons bx bx-home-circle"></i>
+              <div data-i18n="Analytics">Orders</div>
+          </a>
+      </li>
+      <li class="menu-item {{ Request::is('add-products') ? 'active' : ''}}">
+          <a href="{{ url('/users' )}}" class="nav-link">
+              <i class="menu-icon tf-icons bx bx-home-circle"></i>
+              <div data-i18n="Analytics">Users</div>
+          </a>
+      </li>
     <!-- Layouts -->
     <!-- <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
