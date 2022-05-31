@@ -63,7 +63,7 @@
                                 @else
                                     <label class="badge bg-danger">Rupture</label>
                                 @endif
-                                <button type="button" class="btn btn-success me-3 float-start">Ajouter aux favoris <i
+                                <button type="button" class="btn btn-success addToWishList me-3 float-start">Ajouter aux favoris <i
                                         class="fa fa-heart"></i></button>
                             </div>
                         </div>

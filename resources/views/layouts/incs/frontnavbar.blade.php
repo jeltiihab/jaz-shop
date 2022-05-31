@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white">
+<nav class="navbar navbar-expand-lg sticky-top navbar-light shadow bg-white">
     <div class="container">
         <a class="navbar-brand" href="{{url('/')}}">JAZ-Shop</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -15,6 +15,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('cart')}}">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('wishlist')}}">Wishlist</a>
                 </li>
                 @guest
                     @if(Route::has('login'))
