@@ -18,11 +18,9 @@ class WishlistController extends Controller
 
     public function add(Request $request)
     {
-        if(Auth::check())
-        {
+        if (Auth::check()) {
             $prod_id = $request->input('product_id');
-            if(Product::find($prod_id))
-            {
+            if (Product::find($prod_id)) {
                 $wish = new Wishlist();
                 $wish->prod_id = $prod_id;
                 $wish->user_id = Auth::id();
@@ -39,15 +37,19 @@ class WishlistController extends Controller
     public function deleteitem(Request $request)
     {
         if (Auth::check()) {
-            $prod_id = $request->input('prod_id');
-            if(Wishlist::where('prod_id', $prod_id)->where('user_id', Auth::id())->exists())
-            {
+            $prod_id = $request->input('product_id');
+            if (Wishlist::where('prod_id', $prod_id)->where('user_id', Auth::id())->exists()) {
                 $wish = Wishlist::where('prod_id', $prod_id)->where('user_id', Auth::id())->first();
                 $wish->delete();
                 return response()->json(['status' => "Item removed from wishlist successfully"]);
             }
         } else {
-            return Response()->json(['status' => "Login to continue"]);
+            return response()->json(['status' => "Login to continue"]);
         }
+    }
+    public function wishlistcount()
+    {
+        $wishlist = Wishlist::where('user_id', Auth::id())->count();
+        return response()->json(['count' => $wishlist]);
     }
 }

@@ -1,4 +1,32 @@
 $(document).ready(function () {
+    loadcart();
+    loadwishlist()
+ 
+
+    function loadcart()
+    {
+         $.ajax({
+            method: 'GET',
+            url: '/load-cart-count',
+            success: function (response) {
+                $('.cart-count').html('');
+                $('.cart-count').html(response.count);
+            }
+        });
+    }
+    
+    function loadwishlist()
+    {
+         $.ajax({
+            method: 'GET',
+            url: '/load-wishlist-count',
+            success: function (response) {
+                $('.wishlist-count').html('');
+                $('.wishlist-count').html(response.count);
+            }
+        });
+    }
+    
     $('.addToCartBtn').click(function (e) {
         e.preventDefault();
         const product_id = $(this).closest('.product_data').find('.prod_id').val();
@@ -19,6 +47,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 swal(response.status);
+                loadcart();
             }
         });
     });
@@ -40,6 +69,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 swal(response.status);
+                loadwishlist()
             }
         });
     })
@@ -60,7 +90,8 @@ $(document).ready(function () {
                 'product_id': product_id,
             },
             success: function (response) {
-                swal(response.status);
+                window.location.reload();
+                swal("", response.status, "Success");
             }
         });
     })

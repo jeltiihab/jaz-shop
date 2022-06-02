@@ -23,10 +23,13 @@ class Order extends Model
         'state',
         'country',
         'postalcode',
+        'total_price',
+        'payment_mode',
+        'payment_id',
         'status',
         'message',
         'tracking_no',
-        'total_price'
+
     ];
 
     public function orderitems()

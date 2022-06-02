@@ -20,6 +20,9 @@ use App\Http\Controllers\Admin\ProductController;
 
 Auth::routes();
 
+Route::get('load-cart-count', [CartController::class, 'cartcount']);
+Route::get('load-wishlist-count', [WishlistController::class, 'wishlistcount']);
+
 Route::get('/', [FrontendController::class, 'index']);
 
 Route::get('category', [FrontendController::class, 'category']);
@@ -41,6 +44,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('view-order/{id}', [UserController::class, 'view']);
 
     Route::get('wishlist', [WishlistController::class, 'index']);
+
+    Route::post('proceed-to-pay', [CheckoutController::class, 'razorpaycheck']);
 });
 
 // redirect to admin page
@@ -68,5 +73,4 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {  // see http/kernel.
 
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewuser']);
-
 });

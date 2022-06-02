@@ -87,6 +87,7 @@
                                     </tbody>
                                 </table>
                                 <h4 class="px-2">Grand total: <span class="float-end">{{ $orders->total_price }}</span></h4>
+                            
                             </div>
                         </div>
                     </div>

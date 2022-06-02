@@ -89,6 +89,7 @@
                                     </tbody>
                                 </table>
                                 <h4 class="px-2">Grand total: <span class="float-end">{{ $orders->total_price }}</span>
+                                <h6 class="px-2">Payment mode: {{ $orders->payment_mode }}</h6>
                                 </h4>
                                 <div class="mt-5 px-2">
                                     <label for="">Order status</label>
